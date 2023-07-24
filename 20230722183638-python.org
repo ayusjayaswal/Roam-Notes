@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       abe1dd18-115d-444e-b23c-eb14cc46c645
+:END:
+#+title: Python
+
+Here we talk about the Python Language
+

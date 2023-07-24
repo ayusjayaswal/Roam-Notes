@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       590b9353-8c80-49b0-9961-6de06388afb5
+:END:
+#+title: C Strings Library
+
+This File Talks About Strings Library

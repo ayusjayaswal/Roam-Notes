@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       0ebaebaf-07fb-4375-9472-294d9ebb7524
+:END:
+#+title: Math
+* Important Problems
+[[id:f8b6567e-88f0-4806-8965-98f8f3142e2f][The Brick Factory Problem]]
+

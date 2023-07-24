@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       f8b6567e-88f0-4806-8965-98f8f3142e2f
+:END:
+#+title: The Brick Factory Problem
+* Introduction
+
+
+[[./img/the_brick_factory_problem.png]]
+
+Turán's brick factory problem asks for the minimum number of crossings in a drawing of a complete bipartite graph.
+
+Mathematically, this problem can be formalized as asking for a graph drawing of a complete bipartite graph, whose vertices represent kilns and storage sites, and whose edges represent the tracks from each kiln to each storage site.
+
+The graph should be drawn in the plane with each vertex as a point, each edge as a curve connecting its two endpoints, and no vertex placed on an edge that it is not incident to. A crossing is counted whenever two edges that are disjoint in the graph have a nonempty intersection in the plane.
+
+The question is then, what is the minimum number of crossings in such a drawing?
+
+*** Solution
+
+Formula tells the minimum number of crossings.
+[[./img/the_brick_factory_problem_solution.svg]]

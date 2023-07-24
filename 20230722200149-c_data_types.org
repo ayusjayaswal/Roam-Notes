@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d48623f8-fe54-4ef4-893a-23ecf86242b4
+:END:
+#+title: C Data types
+
+There are several data types in C
+
