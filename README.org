@@ -1,0 +1,37 @@
+#+title: Notes From Org-Roam
+#+author:Ayush Jayaswal
+* Overview
+Welcome to the GitHub repository for My Org Roam Directory! This repository contains my Org Roam notes, which are organized using Org mode in Emacs.
+
+Org Roam is a powerful note-taking and knowledge management tool based on Org mode. It allows me to create and link notes easily, enabling seamless navigation through interconnected information.
+
+* What is Org Roam?
+[Org Roam](https://www.orgroam.com/) is an Emacs package that enhances the Org mode experience for taking notes, managing information, and building a personal knowledge base. With Org Roam, I can create and link notes using a simple [[wiki-style]] syntax, making it easy to connect related pieces of information.
+
+Org Roam also offers various features, such as backlinks, which allow me to see all the links pointing to a specific note, aiding in exploring connections within my knowledge base. It also supports bi-directional linking, helping me build a web of interconnected thoughts and ideas.
+
+* Getting Started
+To get started with my Org Roam notes:
+1. Ensure you have Emacs installed on your system.
+2. Install Org Roam by following the instructions on the [Org Roam website](https://www.orgroam.com/).
+3. Clone this repository to your local machine using the command:
+
+git clone git@github.com:yourusername/your-repo.git
+
+kotlin
+
+Replace `yourusername` with your GitHub username and `your-repo` with the name of this repository.
+4. Open the `org` directory in Emacs to start exploring and taking advantage of my Org Roam notes.
+
+* Contributing
+As this is my personal knowledge base, I am the primary contributor to this repository. However, if you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request. I welcome constructive feedback and discussions.
+
+* License
+The contents of this repository are under [LICENSE_NAME] license. Please review the LICENSE file for details.
+
+* Acknowledgments
+I want to express my gratitude to the Org Roam developers and the broader Emacs community for creating and maintaining this fantastic tool and ecosystem. Your contributions have been invaluable in shaping my knowledge management workflow.
+
+Thank you for visiting my Org Roam repository!
+
+In this README.org content, I've included an overview of the repository, a brief explanation of Org Roam, the repository structure, instructions on getting started, a section on contributing, license information, and acknowledgments. Feel free to customize it further to suit your specific use case and preferences!
