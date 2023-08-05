@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       bae1a231-fa57-4481-81a7-30520264217f
+:END:
+#+title: C string.h strlen()
+* String Length { strlen() }
+
+** Overview
+The `strlen` function in C is used to determine the length of a given string. It calculates the number of characters in the string until it reaches the null terminator ('\0').
+
+** Syntax
+#+begin_src C
+#include <string.h>
+size_t strlen(const char *str);
+#+end_src
+
+#+RESULTS:
+
+** Parameters
+- `str`: A pointer to the string whose length needs to be calculated.
+
+** Return Value
+The `strlen` function returns the length of the string as a `size_t` (unsigned integer) value. It does not include the null terminator in the length count.
+
+** Example
+Suppose we have the following C code:
+
+#+begin_src C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    const char *str = "Hello, World!";
+    size_t length = strlen(str);
+    printf("Length of the string: %zu\n", length);
+    return 0;
+}
+#+end_src
+
+#+RESULTS:
+: Length of the string: 13
+
+In this example, the string "Hello, World!" has a length of 13 characters, excluding the null terminator.
+
+** Note
+- Make sure that the input string is null-terminated; otherwise, the behavior will be undefined.
+- The `strlen` function does not check for buffer overflow. It continues counting until it finds the null terminator, which may cause issues if the string is not properly terminated.
+- Avoid using `strlen` in performance-critical code on very long strings, as it iterates through the entire string to calculate its length, making it potentially slow for large strings.

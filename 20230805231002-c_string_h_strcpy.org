@@ -1,0 +1,50 @@
+:PROPERTIES:
+:ID:       76f75cc0-28b3-47f0-83e1-31fd3dad9f36
+:END:
+#+title: C string.h strcpy()
+
+* String Copy (strcpy)
+
+** Overview
+The `strcpy` function in C is used to copy the contents of one string to another. It overwrites the existing content of the destination string and includes the null terminator at the end of the copied string.
+
+** Syntax
+#+begin_src C
+#include <string.h>
+
+char *strcpy(char *dest, const char *src);
+#+end_src
+
+** Parameters
+- `dest`: A pointer to the destination string where the content will be copied. It should have enough space to hold the copied string.
+- `src`: A pointer to the source string whose content will be copied.
+
+** Return Value
+The `strcpy` function returns a pointer to the destination string (`dest`).
+
+** Example
+Suppose we have the following C code:
+
+#+begin_src C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char destination[20];
+    const char *source = "Hello, World!";
+    strcpy(destination, source);
+    printf("Copied string: %s\n", destination);
+    return 0;
+}
+#+end_src
+
+#+RESULTS:
+| Copied string: Hello | World! |
+
+In this example, the content of the source string "Hello, World!" is copied to the destination string `destination`.
+
+** Note
+- Make sure that the destination string has enough space to hold the content of the source string, along with the null terminator. Otherwise, it may cause undefined behavior.
+- The `strcpy` function does not check for buffer overflow. To avoid potential issues, consider using `strncpy` or other safer alternatives if you want to limit the number of characters copied.
+- Always ensure that the source string is null-terminated; otherwise, the behavior of `strcpy` will be unpredictable.
+- Remember that strings in C are arrays of characters, and the null terminator ('\0') marks the end of a string.

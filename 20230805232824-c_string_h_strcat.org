@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       32db51b7-3896-4b37-b077-32d1989d9770
+:END:
+#+title: C string.h strcat()
+* Function Overview
+`strcat` is a standard C library function used to concatenate (join) two strings. It takes two null-terminated character arrays (strings) as input and appends the contents of the second string to the end of the first string. The function returns a pointer to the resulting concatenated string.
+
+* Syntax
+The syntax of the `strcat` function is as follows:
+
+#+begin_src c
+char* strcat(char* dest, const char* src);
+#+end_src
+
+- `dest`: Pointer to the destination string (the string to which `src` will be appended).
+- `src`: Pointer to the source string (the string that will be appended to `dest`).
+
+* Return Value
+The `strcat` function returns a pointer to the destination string (`dest`). The modified destination string will have the contents of both `dest` and `src` concatenated.
+
+* Example
+#+begin_src C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[50] = "Hello, ";
+    const char str2[] = "World!";
+    
+    strcat(str1, str2);
+    
+    printf("Concatenated string: %s", str1);
+    
+    return 0;
+}
+#+end_src
+
+#+RESULTS:
+| Concatenated string: Hello | World! |
+
+* Notes
+- The destination string (`dest`) must have enough space to accommodate the concatenated string. Otherwise, the behavior will be undefined, and it may lead to buffer overflows.
+- The `src` string should not overlap the destination string, as it may cause incorrect results.
+- It is recommended to use safer alternatives like `strncat` (which takes a length parameter) to avoid potential buffer overflow issues.
+
+* References
+- [[https://en.cppreference.com/w/c/string/byte/strcat][C Reference - strcat]]
