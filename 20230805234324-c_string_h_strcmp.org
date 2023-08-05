@@ -1,0 +1,66 @@
+:PROPERTIES:
+:ID:       2b73d165-a6d5-446b-aa39-69fbc7a761ea
+:END:
+#+title: C string.h strcmp()
+
+* Introduction
+
+The `strcmp` function is a standard library function in C programming used for string comparison. It compares two strings and returns an integer value that indicates whether the strings are equal or not.
+
+* Syntax
+
+The syntax of the `strcmp` function is as follows:
+
+#+begin_src C
+int strcmp(const char *str1, const char *str2);
+#+end_src
+
+* Parameters
+
+- `str1`: A pointer to the first string to be compared.
+- `str2`: A pointer to the second string to be compared.
+
+* Return Value
+
+The `strcmp` function returns an integer value as follows:
+- If `str1` is less than `str2`, it returns a negative value.
+- If `str1` is greater than `str2`, it returns a positive value.
+- If `str1` is equal to `str2`, it returns 0.
+
+* Example
+Let's see an example of using the `strcmp` function:
+
+#+begin_src C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[] = "hello";
+    char str2[] = "world";
+
+    int result = strcmp(str1, str2);
+
+    if (result < 0) {
+        printf("str1 is less than str2\n");
+    } else if (result > 0) {
+        printf("str1 is greater than str2\n");
+    } else {
+        printf("str1 is equal to str2\n");
+    }
+
+    return 0;
+}
+#+end_src
+
+#+RESULTS:
+: str1 is less than str2
+
+* Notes
+
+- The `strcmp` function compares strings character by character using their ASCII values until it finds a difference or the end of either string.
+- It is essential to ensure that both strings are null-terminated to avoid undefined behavior.
+- For case-insensitive string comparison, you can use the `strcasecmp` function on systems that support it.
+
+* References
+- [[https://www.gnu.org/software/libc/manual/html_node/String_002dComparison.html#String_002dComparison][GNU C Library documentation on strcmp]]
+- [[https://www.cplusplus.com/reference/cstring/strcmp/][C Reference - strcmp]]
