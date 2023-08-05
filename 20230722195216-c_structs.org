@@ -2,3 +2,128 @@
 :ID:       35370393-c62d-43e9-a91b-d692ac722b80
 :END:
 #+title: C Structs
+
+* Definittion
+Structures (also called structs) are a way to group several related variables into one place. Each variable in the structure is known as a member of the structure.
+
+Unlike an array, a structure can contain many different data types (int, float, char, etc.).
+#+begin_src C
+  struct MyStructure {   // Structure declaration
+    int myNum;           // Member (int variable)
+    char myLetter;       // Member (char variable)
+  }; // End the structure with a semicolon 
+#+end_src
+
+To access the structure, you must create a variable of it.
+
+Use the struct keyword inside the main() method, followed by the name of the structure and then the name of the structure variable:
+
+#+begin_src C :result
+  struct myStructure {
+    int myNum;
+    char myLetter;
+  }
+    int main() {
+    struct myStructure s1;
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+
+* Accessing Struct Members
+To access members of a structure, use the dot syntax (.):
+#+begin_src C :result
+  // Create a structure called myStructure
+  struct myStructure {
+    int myNum;
+    char myLetter;
+  };
+
+  int main() {
+    // Create a structure variable of myStructure called s1
+    struct myStructure s1;
+    struct myStructure s2;
+    // Assign values to members of s1
+    s1.myNum = 13;
+    s1.myLetter = 'M';
+    s2.myNum = 15;
+    s2.myLetter = 'O';
+    // Print values
+    printf("My numberS1: %d\n", s1.myNum);
+    printf("My letterS1: %c\n", s1.myLetter);
+    printf("My numberS2: %d\n", s2.myNum);
+    printf("My letterS2: %c\n", s2.myLetter);
+    return 0;
+  } 
+#+end_src
+
+#+RESULTS:
+| My | numberS1: | 13 |
+| My | letterS1: |  M |
+| My | numberS2: | 15 |
+| My | letterS2: |  O |
+* Strings in Structures
+** Incorrect Way
+ Remember that strings in C ([[id:590b9353-8c80-49b0-9961-6de06388afb5][C Strings Library]])are actually an array of characters, and unfortunately, you can't assign a value to an array like this:
+#+begin_src C
+   struct myStructure {
+  int myNum;
+  char myLetter;
+  char myString[30];  // String
+};
+
+int main() {
+  struct myStructure s1;
+  // Trying to assign a value to the string
+  s1.myString = "Some text";
+  // Trying to print the value
+  printf("My string: %s", s1.myString);
+  return 0;
+} 
+
+#+end_src
+
+#+RESULTS:
+/tmp/babel-PSIR66/C-src-Fvib0A.c:18:15: error: assignment to expression with array type
+
+** Correct Way
+However, there is a solution for this! You can use the strcpy()([[id:590b9353-8c80-49b0-9961-6de06388afb5][C Strings Library]]) function and assign the value to s1.myString, like this:
+#+begin_src C
+  struct myStructure {
+    int myNum;
+    char myLetter;
+    char myString[30]; // String
+  };
+  int main() {
+    struct myStructure s1;
+    // Assign a value to the string using the strcpy function
+    strcpy(s1.myString, "Some text");
+    // Print the value
+    printf("My string: %s", s1.myString);
+    return 0;
+  } 
+#+end_src
+
+#+RESULTS:
+: My string: Some text
+* Quick Asignment
+#+begin_src C
+  // Create a structure
+struct myStructure {
+  int myNum;
+  char myLetter;
+  char myString[30];
+};
+
+int main() {
+  // Create a structure variable and assign values to it
+  struct myStructure s1 = {13, 'B', "Some text"};
+  // Print values
+  printf("%d %c %s", s1.myNum, s1.myLetter, s1.myString);
+  return 0;
+} 
+#+end_src
+
+#+RESULTS:
+: 13 B Some text
