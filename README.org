@@ -6,14 +6,14 @@ Welcome to the GitHub repository for My Org Roam Directory! This repository cont
 Org Roam is a powerful note-taking and knowledge management tool based on Org mode. It allows me to create and link notes easily, enabling seamless navigation through interconnected information.
 
 * What is Org Roam?
-[[Org Roam][https://www.orgroam.com/]] is an Emacs package that enhances the Org mode experience for taking notes, managing information, and building a personal knowledge base. With Org Roam, I can create and link notes using a simple [[wiki-style]] syntax, making it easy to connect related pieces of information.
+[[https://www.orgroam.com][Org Roam]] is an Emacs package that enhances the Org mode experience for taking notes, managing information, and building a personal knowledge base. With Org Roam, I can create and link notes using a simple [[wiki-style]] syntax, making it easy to connect related pieces of information.
 
 Org Roam also offers various features, such as backlinks, which allow me to see all the links pointing to a specific note, aiding in exploring connections within my knowledge base. It also supports bi-directional linking, helping me build a web of interconnected thoughts and ideas.
 
 * Getting Started
 To get started with my Org Roam notes:
 1. Ensure you have Emacs installed on your system.
-2. Install Org Roam by following the instructions on the [[Org Roam website][https://www.orgroam.com/]].
+2. Install Org Roam by following the instructions on the [[https://www.orgroam.com/][Org Roam website]].
 3. Clone this repository to your local machine using the command:
 #+begin_src 
  git clone git@github.com:ayusjayaswal/Roam-Notes.git
