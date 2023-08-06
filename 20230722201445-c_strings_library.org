@@ -4,3 +4,8 @@
 #+title: C Strings Library
 
 This File Talks About Strings Library
+* [[id:32db51b7-3896-4b37-b077-32d1989d9770][C string.h strcat()]]
+* [[id:76f75cc0-28b3-47f0-83e1-31fd3dad9f36][C string.h strcpy()]]
+* [[id:2b73d165-a6d5-446b-aa39-69fbc7a761ea][C string.h strcmp()]]
+* [[id:bae1a231-fa57-4481-81a7-30520264217f][C string.h strlen()]]
+
