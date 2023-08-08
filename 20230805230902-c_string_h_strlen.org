@@ -16,6 +16,7 @@ size_t strlen(const char *str);
 #+RESULTS:
 
 ** Parameters
+
 - `str`: A pointer to the string whose length needs to be calculated.
 
 ** Return Value
