@@ -8,3 +8,4 @@ Learning about Programming Lanuages. Start With C as it is "The Original"
 [[id:344a6979-ebed-4511-b94a-48ca5f6fe8f9][C Language]]
 * Object Oriented Languages
 [[id:abe1dd18-115d-444e-b23c-eb14cc46c645][Python]]
+[[id:2cd16199-1bad-4661-98dd-84a8785fd673][Java Language]]

@@ -16,7 +16,7 @@ It returns a pointer of type void which can be cast into a pointer of any form.
 
 * Example
 #+begin_src C
-  #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
  
 int main()
