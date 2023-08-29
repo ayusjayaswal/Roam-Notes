@@ -2,6 +2,11 @@
 :ID:       0ebaebaf-07fb-4375-9472-294d9ebb7524
 :END:
 #+title: Math
+
+* Theorems
+[[id:5649cc54-60dd-4de1-aa31-c7c27292647b][Maclaurin's Theorem]]
+[[id:5a76b03b-a5ea-48b0-b732-c8ec7a4e08eb][Taylor's Theorem]]
+
 * Important Problems
 [[id:f8b6567e-88f0-4806-8965-98f8f3142e2f][The Brick Factory Problem]]
 

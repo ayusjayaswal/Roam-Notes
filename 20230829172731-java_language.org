@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       2cd16199-1bad-4661-98dd-84a8785fd673
+:END:
+#+title: Java Language
+
+* About
+Java is a programming language and computing platform first released by Sun Microsystems in 1995.
+
+** How Java Works...
+*** Source
+Create a source document. Use an established protocol (in this case, the Java language).
+*** Compiler
+Run your document through a source code compiler.
+The compiler checks for errors and won’t let you compile until it’s satisfied that everything will run correctly.
+Here Compiler is =Javac= available in /java-11-openjdk/.
+*** Output
+The compiler creates a new document, coded into Java =bytecode=.  
+Any device capable of running Java will be able to interpret/translate this file into something it can run.
+/The compiled bytecode is platform-independent./
+*** Virtual Machines
+The virtual machine reads and runs the bytecode.
+* Code Structure in Java
+
+[[./img/java_code_structure.png]]
+
+** Source FIle
+A source code file (with the .java extension) holds one class definition.
+The class represents a piece of your program, although a very tiny application might need just a single class.
+** Class
+A class has one or more methods. In the Dog class, the bark method will hold instructions for how the Dog should bark.
+** Method
+Within the curly braces of a method, write your instructions for how that method should be performed.
+Your methods must be declared inside a class (in other words, within the curly braces of the class).
