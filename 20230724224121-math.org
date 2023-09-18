@@ -10,3 +10,5 @@
 * Important Problems
 [[id:f8b6567e-88f0-4806-8965-98f8f3142e2f][The Brick Factory Problem]]
 
+* Others...
+[[id:7f6a6e17-77d8-483a-85c1-ccfade91c0f9][Horner's Method]]
