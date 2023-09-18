@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6b8c4b88-33e1-4e3d-87c2-2e2812a85c00
+:END:
+#+title: C Notes
+* Sources of Errors
+
++ _Make sure to initialize variables to some value /if not assigned explicitely/ or =GARBAGE VALUE= will cause errors._

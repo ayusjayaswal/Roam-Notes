@@ -1,0 +1,43 @@
+:PROPERTIES:
+:ID:       515e92a9-97cb-441b-ba09-44eafc73d1cb
+:END:
+#+title: C Pointers
+A Pointer Variable is a variable whose value is the address of some memory location.
+__ =Syntax= _
+#+begin_src C
+  int *ptr; //or
+  int*    ptr;//is valid too.
+#+end_src
+But, the second is not a good technique and here is why...
+#+begin_src C
+  int*  a,b,c;
+#+end_src
+/gives an impression that all =a=, =b=, =c= are pointers but they aren't. Only =a= is pointer, the rest are Integers./
+#+begin_src C
+  int *a,*b,*c; //is the inteded declaration.
+#+end_src
+* Initialization
+Declarations can also be used to initialize as shown...
+#+begin_src C
+  char *message = "Namaste World!";
+#+end_src
+Actually Means...
+#+begin_src C
+  char *message;
+  char message = "Namaste World!";
+#+end_src
+* Constants and Pointers
+** Pointer to a constant integer
+Here, Pointer may change but the integer stored in the addres of the pointed variable wont change.
+#+begin_src C
+  int const *pci;   //  pci --> Pointer to a Constant Integer
+#+end_src
+** Constant Pointer to an Integer
+The Value of the variable may change but the pointer won't.
+#+begin_src C
+  int * const cpi; // cpi --> Constant Pointer to an Integer
+#+end_src
+** Constant Pointer to a Constant Integer
+#+begin_src C
+  int const * const cpci; // cpci --> Constant Pointer to a Constant Integer
+#+end_src

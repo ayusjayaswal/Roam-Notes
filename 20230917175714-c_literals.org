@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       bbd2ba46-24b2-4d8a-95b6-9499624ec2ed
+:END:
+#+title: C Literals
+In C, literals are constant values that are used directly in your code. These values are fixed and cannot be changed during the execution of the program.
+
++ Integer Literals: These are whole number constants without a decimal point. They can be represented in various formats:
+  1. Decimal: For example, 42
+  2. Octal: Prefix with 0, e.g., 075 (octal representation of 53 in decimal)
+  3. Hexadecimal: Prefix with 0x or 0X, e.g., 0x1A (hexadecimal representation of 26 in decimal)
+  4. Binary (C99 and later): Prefix with 0b or 0B, e.g., 0b1010 (binary representation of 10 in decimal)
+
++ Floating-Point Literals: These are numbers with a decimal point or in scientific notation:
+  1. Decimal: For example, 3.14
+  2. Scientific Notation: For example, 1.23e-4 (1.23 times 10 to the power of -4)
+
++ Character Literals: These are single characters enclosed in single quotes, like 'A' or '5'. You can also use escape sequences like '\n' for newline and '\t' for tab.
+  
++ String Literals: These are sequences of characters enclosed in double quotes, like "Hello, World!". They are actually arrays of characters with a null-terminator ('\0') at the end.
+
++ Enumeration Constants: Enumerations (enums) allow you to define named constants with integer values. For example:
+    #+begin_src C
+      enum Color { RED, GREEN, BLUE };
+    #+end_src
+
++     
