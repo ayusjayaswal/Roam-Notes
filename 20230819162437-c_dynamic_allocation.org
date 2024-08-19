@@ -107,4 +107,18 @@ example follows:
   free(p2);
 #+end_src
 
-The execution of the second free function will result in a runtime exception. 
+The execution of the second free function will result in a runtime exception.
+
+* Custom Safer Free Function
+The free function does not check the pointer passed to see whether it is NULL and does not set the pointer to NULL before it returns. Setting a pointer to NULL after freeing is a good practice.
+
+/Note a pointer to a pointer is passed./
+
+#+begin_src C
+  void saferFree(void **pp) {
+    if (pp != NULL && *pp != NULL) { 
+      free(*pp);
+      ,*pp = NULL;
+    }
+  }
+#+end_src
