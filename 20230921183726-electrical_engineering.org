@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       767805c6-9e48-4298-b876-40031aed2d97
+:END:
+#+title: Electrical Engineering
+This Org doc contains useful basic electrical enginnering concepts...
+* [[id:31c4554f-6503-4334-a36c-c60ff683483a][Nodal Analysis]]
+** [[id:dc2270ee-bb60-4efa-8549-de708ff05231][Supernode Analysis]]

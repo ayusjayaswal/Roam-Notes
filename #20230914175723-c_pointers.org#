@@ -2,8 +2,6 @@
 :ID:       515e92a9-97cb-441b-ba09-44eafc73d1cb
 :END:
 #+title: C Pointers
-
-
 A Pointer Variable is a variable whose value is the address of some memory location.
 __ =Syntax= _
 #+begin_src C
@@ -31,12 +29,15 @@ Actually Means...
 ** Explaination
 lets start with an example.
 #+begin_src C
-  int x;
-  int *p_x=&x;
+int x;
+int *p_x=&x;
 #+end_src
 The above statements:
 + Declares variable x with 4 bits of storage say with =addresses 1,2,3,4=.
 + Now, note that =&x=1= only, not =2, 3 or 4=. Second line declares a pointer =p_x= to the variable =x=.
+  
+
+
 * Constants and Pointers
 ** Pointer to a constant integer
 Here, Pointer may change but the integer stored in the addres of the pointed variable wont change.
@@ -63,13 +64,7 @@ With this declaration:
 #+begin_src C
   int const * const cpci; // cpci --> Constant Pointer to a Constant Integer
 #+end_src
-
 * Pointer Addition
 Pointer addition makes changes in the address stored by the pointer.
 
 For example, form above =explanation 1= if we perform =p_x+1= the address will become =5= or =p_x+2= will change address to =9=.
-
-* Dangling Pointers
-If a pointer still references the original memory after it has been freed, it is called a dangling pointer.
-
-* TODO NULL POINTERS

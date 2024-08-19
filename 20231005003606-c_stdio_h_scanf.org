@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       39200153-57dc-43f4-b7db-ff094c9e43d7
+:END:
+#+title: C stdio.h scanf()
+Reads data from a variety of sources, interprets it according to format and stores the results into given locations.
+1) reads the data from =stdin=
+2) reads the data from file stream
+3) reads the data from /null-terminated character string buffer/. Reaching the end of the string is equivalent to reaching the end-of-file condition for fscanf

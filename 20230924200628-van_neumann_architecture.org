@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       903aa61a-4365-4583-8801-9600c31f5063
+:END:
+#+title: Van Neumann Architecture
+Von-Neumann  computer architecture design was proposed in 1945. It was later known as =Von-Neumann architecture=.
+[[./img/van_neumann.png]]

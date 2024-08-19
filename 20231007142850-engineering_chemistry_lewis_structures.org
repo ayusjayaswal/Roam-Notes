@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       3909d361-de11-41aa-9e44-2b6d0e2d5fd0
+:END:
+#+title: Engineering Chemistry Lewis Structures
+
+/"Each atom shares electrons with neighbouring atoms to achieve a total of eight valence 
+electrons (an ‘octet’)"/
+
+* Examples
+[[./img/bf4.png]]

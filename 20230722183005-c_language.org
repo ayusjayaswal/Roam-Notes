@@ -7,4 +7,10 @@
 
 ** [[id:35370393-c62d-43e9-a91b-d692ac722b80][C Structs]]
 
+* Libraries
+
 ** [[id:590b9353-8c80-49b0-9961-6de06388afb5][C Strings Library]]
+
+** [[id:8dc11027-5c5a-4638-a85c-345a07711e62][C stdlib.h]]
+
+* [[id:6b8c4b88-33e1-4e3d-87c2-2e2812a85c00][C Notes]] 

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f89b5382-832b-4e8e-b46a-b37fdeb65c04
+:END:
+#+title: Awk Programming Language
+
+* Buitin Variables
+|----+--------------------------|
+| NR | nth line number          |
+| NF | no of fields in the line |
+|----+--------------------------|

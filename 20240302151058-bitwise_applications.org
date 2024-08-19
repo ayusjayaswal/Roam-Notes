@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       02cf460e-d132-4da4-96ae-b6cfa1e764f9
+:END:
+#+title: Bitwise Applications
+* ODD or EVEN
+If a number _n_ is odd then /n&1 == 1/
+* Check if a number is a power of two
+if a number _n_ is a power of two /x&(x-1) == 0/
+=Note: Does not work for n = 0= 
+* Working with kth bit of a number _x_
+- check if kth bit is set /x&(1<<k)/  --> =True if kth bit is set=
+- Toggle the kth bit /x^(1<<k)/
+- Set the kth bit /x|(1<<k)/
+- Unset the kth bit /x&!(1<<k)/
+* Multiplication and Division by pow(2,k)
+- Multiply with pow(2,k) /n<<k/
+- Divide with pow(2,k) /n>>k/
+* Swapping without third variable
+x=x^y
+y=x^y
+x=x^y
+* Toggle between two values (if x is a make it b if x is b make it a)
+x = a ^ b ^ x
+/is same as/
+  if(x==a)x=b;
+  else x=a;
+* Binary Addition
+a+b = a^b + 2(a&b)
+a+b = a|b + (a&b)

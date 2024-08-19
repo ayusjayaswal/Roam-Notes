@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       e534b9f4-aec4-4e24-b9d8-e5a3d6a94979
+:END:
+#+title: Notes: Introduction to Algorithms
+
+* INDEX :toc:
+- [[#data-structures][Data Structures]]
+  - [[#definition][Definition]]
+  - [[#elementary-data-structures][Elementary Data Structures]]
+
+* Data Structures
+** Definition
+1. /Dictionary/: many algorithms need only the ability to insert elements into, delete elements from, and test membership in a set. We call a dynamic set that supports these operations a dictionary.
+
+** Elementary Data Structures
+In this chapter, we examine the representation of dynamic sets by simple data structures that use pointers.
+
+*** Arrays
++ Most programming languages require each element of a particular array to be the same size.
+
++ If the elements of a given array might occupy different numbers of bytes,the array elements are usually objects of varying sizes, and what actually appears in each array element is a =pointer to the object=.
+
+*** Matrices
+*** Stacks and Queues
+1. In a stack, the element deleted from the set is the one most recently inserted: the stack implements a last-in, first-out, or LIFO, policy.
+
+2. Similarly, in a queue, the element deleted is always the one that has been in the set for the longest time: the queue implements a first-in, first-out, or FIFO, policy
+
+**** Stacks
++ The _INSERT_ operation on a stack is often called _PUSH_, and the _DELETE_ operation, which does not take an element argument, is often called _POP_.
++ The stack has attributes /S.top/, indexing the most recently inserted element, and /S.size/, equaling the size n of the array.
+
+**** Queues

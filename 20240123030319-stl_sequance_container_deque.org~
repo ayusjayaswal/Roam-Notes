@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       b5ae8ba1-9767-4cfe-9b50-af29b3c7ccea
+:END:
+#+title: STL: Sequance Container: Deque
+
+* Deque
+
+Deque is a dynamic array that grows in both beginning and the end of the array.
+
+** Constructor
+#+begin_src C++
+  #include<deque>
+  int main(){
+    deque<int> deq ={4,6,7};
+    deque.push_front(2);
+    deque.push_back(3);
+  }
+#+end_src
+
+** Properties
++ Fast insertion to the beginning and the end: O(1)
++ Slow insert remove in middle: O(n)
++ Slow search: O(n)
+
+** [[id:de835806-bde2-4226-9931-b919e17bd2a6][STL: Iterators]]

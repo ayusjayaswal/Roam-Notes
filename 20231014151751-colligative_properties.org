@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       2ee3739a-bea5-4974-9895-5892a552eb83
+:END:
+#+title: Colligative Properties
+These properties include the /lowering of vapour pressure of the solvent, the elevation of its boiling point, the depression of its freezing point, and the origin of osmotic pressure./
+* Lowering of Vapour Pressure
+[[./img/rlvp.png]]
+*  Elevation in Boiling Point
+
+∆Tb ∝ m
+∆Tb = kb m

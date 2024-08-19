@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       2854baa3-ed15-4e64-bd1a-92728f7fe0cb
+:END:
+#+title: STL: Standard Template Library
+
+The "STL" was written by Alexander Stepanov in the days long before C++ was standardised
+
+** Pair
+/std::pair/ is a class template that provides a way to store two heterogeneous objects as a single unit.
+
+* Classifications
+STL has four major components:
+
++ Containers
++ Iterators
++ Algorithms
++ Function objects
+  
+** Containers
+Now, containers are further classified into three categories:
+[[./img/containers.png]]

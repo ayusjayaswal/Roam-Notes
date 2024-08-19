@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       02cf460e-d132-4da4-96ae-b6cfa1e764f9
+:END:
+#+title: Bitwise Applications
+* ODD or EVEN
+If a number _n_ is odd then /n&1 == 1/
+* Check if a number is a power of two
+if a number _n_ is a power of two /x&(x-1) == 0/
+=Note: Does not work for n = 0= 
+*  

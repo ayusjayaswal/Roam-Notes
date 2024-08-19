@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       533b4b31-d8f3-4a8a-a97d-755d405ff507
+:END:
+#+title: C: RAII Resource Acquisition is Initialization
+
+Resource Acquisition Is Initialization (RAII) is a technique invented by Bjarne Stroustrup.
+
+The GNU compiler provides a nonstandard extension to support this.
+
+When the variable goes out of scope, the deallocation process occurs automatically.
+
+The GNU extension uses a macro called RAII_VARIABLE. It declares a variable and
+associates with the variable:
+• A type
+• A function to execute when the variable is created
+• A function to execute when the variable goes out of scope
+
+The macro is shown below:
+#+begin_src C
+  #define RAII_VARIABLE(vartype,varname,initval,dtor)			\
+    void _dtor_ ## varname (vartype * v) { dtor(*v); }			\
+    vartype varname __attribute__((cleanup(_dtor_ ## varname))) = (initval)
+#+end_src
+
+In the following example, we declare a variable called name as a pointer to char.
+When it is created, the malloc function is executed, allocating 32 bytes to it.
+When the function is terminated, name goes out of scope and the free function is executed:
+#+begin_src C
+  void raiiExample() {
+    RAII_VARIABLE(char*, name, (char*)malloc(32), free);
+    strcpy(name,"RAII Example");
+    printf("%s\n",name);
+  }
+#+end_src

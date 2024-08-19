@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       9b65742f-36d3-4205-92f8-fde7b01709b0
+:END:
+#+title: Cpp Global Variable
+* Intro
+Global variable is the variable defined outside any function (main or else) that can be called anywhere in program.
+
+* Scope Resolution Operator ::
+#+begin_src C++ :results output
+  //SYNTAX  ::GlobalVariableName
+  int num = 10;
+  int main(){
+    int num = 20;
+    cout<<num << " " <<::num;
+  }
+#+end_src

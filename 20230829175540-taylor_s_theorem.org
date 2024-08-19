@@ -7,3 +7,5 @@
  [[./img/taylors_theorem.png]]
 
 If we use a=0, so we are talking about the Taylor's Theorem about x=0, we call the series a [[id:5649cc54-60dd-4de1-aa31-c7c27292647b][Maclaurin's Theorem]] for f(x) or,
+
+="MORE THE TERMS YOU ADD MORE ACCURATE THE GRAPH GETS"=

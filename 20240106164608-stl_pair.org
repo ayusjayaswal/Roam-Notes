@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       f941d826-f26e-438b-9054-f601bbb5f0a6
+:END:
+#+title: STL: Pair
+std::pair is a class template that provides a way to store two heterogeneous objects as a single unit.
+* Features...
++ The first element is referenced as ‘first’ and the second element as ‘second’ and the order is fixed (first, second).
+  
++ Pair can be assigned, copied, and compared. The array of objects allocated in a map or hash_map is of type ‘pair’ by default in which all the ‘first’ elements are unique keys associated with their ‘second’ value objects.
+  
++ To access the elements, we use variable name followed by dot operator followed by the keyword first or second.
+
+* Examples...
+ 

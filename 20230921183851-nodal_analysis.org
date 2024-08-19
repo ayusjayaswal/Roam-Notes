@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       31c4554f-6503-4334-a36c-c60ff683483a
+:END:
+#+title: Nodal Analysis
+* About
+Nodal Voltage Analysis uses the “Nodal” equations of Kirchhoff’s first law to find the voltage potentials around the circuit.
+
+At each node point write down Kirchhoff’s first law equation, that is: /“the currents entering a node are exactly equal in value to the currents leaving the node”/ then express each current in terms of the voltage across the branch.
+
+So by adding together all these nodal voltages the net result will be equal to zero. Then, if there are “n” nodes in the circuit there will be “n-1” independent nodal equations
+
+* Example
+lets look at an example circuit...
+[[./img/nodal_analysis_example_circuit.gif]]
+/Usually,we assume Vd = 0/ and it is called =REFERENCE NODE=.
+From Nodal analysis we write.
+[[./img/nodal_analysis_example.gif]]
+As Va = 10v and Vc = 20v , Vb can be easily found by:
+[[./img/nodal_analysis_example_2.gif]]
+* Tutorial Summary
+
+The basic procedure for solving Nodal Analysis equations is as follows:
+
+1) Select a node as the reference node. Assign voltages V1, V2… Vn-1 to the remaining nodes. The voltages are referenced with respect to the reference node.
+2) Apply KCL to each of the non reference nodes.
+3) Use Ohm’s law to express the branch currents in terms of node voltages.Node Always assumes that current flows from a higher potential to a lower potential in resistor. Hence, current is expressed as follows [[./img/node_analysis.gif]]
+4) After the application of Ohm’s Law get the ‘n-1’ node equations in terms of node voltages and resistances.
+5) Solve ‘n-1’ node equations for the values of node voltages and get the required node Voltages as result.
+
+* Important
++ [[id:dc2270ee-bb60-4efa-8549-de708ff05231][Supernode Analysis]]

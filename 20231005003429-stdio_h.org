@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9db1f524-c936-46e6-963f-7fcb7808eb51
+:END:
+#+title: stdio.h
+The Header Library for standard input output commands.
+
+* Input

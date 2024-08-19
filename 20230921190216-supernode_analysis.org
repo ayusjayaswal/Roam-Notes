@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       dc2270ee-bb60-4efa-8549-de708ff05231
+:END:
+#+title: Supernode Analysis
+* Definition of Super Node
+Whenever a voltage source (Independent or Dependent) is connected between the two non reference nodes then these =two nodes form a generalized node called the Super node=.
+So, /Super node can be regarded as a surface enclosing the voltage source and its two nodes./
+[[./img/supernode.gif]]
+In the above Figure 5V source is connected between two non reference nodes Node – 2 and Node – 3. So here Node – 2 and Node – 3 form the Super node.
+* Properties of a Supernode
+1. Always the difference between the voltage of two non reference nodes is known at Supernode.
+2. A supernode has no voltage of its own
+3. A supernode requires application of both KCL and KVL to solve it.
+4. Any element can be connected in parallel with the voltage source forming the supernode.
+5. A Supernode satisfies the KCL as like a simple node.

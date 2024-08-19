@@ -1,0 +1,41 @@
+:PROPERTIES:
+:ID:       9a8e8cc4-adb6-4a92-a319-a8faf679b588
+:END:
+#+title: STL: Sequance Container: Vectors
+
+* Vectors
+
+Vector is a dynamic array that grows in one direction.
+
+Vector is a dynamically allocated contiguous array in memory
+
+/to use do #include <vector>/
+
+** Constructor
+
+We can construct a sample vector by default constructor.
+
+#+begin_src C++
+  #include <vector>
+  int main(){
+    vector<int> vec; // vec.size() = 0
+  vec.push_back(1);
+  vec.push_back(2);
+  vec.push_back(3); // vec:{1,2,3} vec.size() = 3 vec.capacity = 4. 
+  // Note capacity doubles whenever size exceedes capacity.
+  }
+#+end_src
+
+* Accesing value at index
+#+begin_src C++
+  vec[2]; // No Range Checking
+  vec.at(2); // Range checking ; throe range_error exception out of range. 
+#+end_src
+
+** Properties of Vector
+
+1. Fast insert and delete at the end of the vector O(1)
+2. Slow insert or delete at the beginning or middle of vector: O(n)
+3. Slow Search: O(n)
+  
+** [[id:de835806-bde2-4226-9931-b919e17bd2a6][STL: Iterators]]

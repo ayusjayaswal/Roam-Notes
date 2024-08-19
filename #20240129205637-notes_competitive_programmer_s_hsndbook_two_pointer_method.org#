@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       904efc46-f693-480a-a37b-81eebf1df8f1
+:END:
+#+title: Notes: Competitive Programmer's Handbook: Two Pointer Method
+
+In the two pointers method, two pointers are used to iterate through the array values. Both pointers can move to one direction only, which ensures that the algorithm works efficiently.
+

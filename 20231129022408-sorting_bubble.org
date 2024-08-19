@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       eba74f6f-4083-4589-80b6-2961cf8a37f6
+:END:
+#+title: Sorting: Bubble
+#+begin_src C :results output
+// Bubble sort in C
+// bubble sort function
+void bubbleSort(int arr[], int size) {
+ 
+  // loop over array elements
+  for (int i = 0; i < size - 1; ++i) {
+      
+    // loop to compare array elements
+    for (int j = 0; j < size - i - 1; ++j) {
+      
+      // compare two adjacent elements
+      if (arr[j] > arr[j + 1]) {
+        
+        // swap if elements are out-of-order
+        int temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+}
+#+end_src
+* Optimized Bubble Sort Algorithm
+
+Imagine the case where the list is already sorted. For example, our input list contains 2, 3, 4, 5 instead of 5, 3, 4, 2.
+
+In the above algorithm, the loop would still run to compare all the elements. It might cause complex issues like longer execution times.
+
+To tackle this, we can do the following:
+
+        Create a flag variable, called swapped.
+        The value of the swap is set to true if, during any iteration, swapping was done.
+        Else, the value of the swap is set to false.
+        After an iteration, if the value of swapped is found to be false, it means the array is sorted, and no more comparisons are required.
+        We then stop the execution.
+
+It will help in reducing the number of comparisons, and hence the execution time of the algorithm.

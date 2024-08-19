@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       8dc11027-5c5a-4638-a85c-345a07711e62
+:END:
+#+title: C stdlib.h
+
+* [[id:41ccba0c-c35c-455d-bc3d-f31fd5385189][C free()]]
+
+* [[id:c95c860c-3742-4a59-a22e-13530e9e6f2d][C malloc()]]
+
+* [[id:664bc76b-c4bc-4257-b1ae-7435c4183fab][C realloc()]]

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       7a4e0067-5831-445d-a4d7-e23c25a11c0f
+:END:
+#+title: Root
+* Computers
++ [[id:1dad08f8-0946-4828-99ee-7cc1fbdcc067][Progamming Languages]]
++ [[id:6b8c4b88-33e1-4e3d-87c2-2e2812a85c00][Notes]]
++ [[id:0ebaebaf-07fb-4375-9472-294d9ebb7524][Math]]
+* Engineering
++  
++ [[id:767805c6-9e48-4298-b876-40031aed2d97][Electrical Engineering]]

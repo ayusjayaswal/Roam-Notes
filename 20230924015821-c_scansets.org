@@ -1,0 +1,35 @@
+:PROPERTIES:
+:ID:       e0ed99b8-2eb3-4323-8905-6b3bd1493cfb
+:END:
+#+title: C Scansets
+scanf family functions support scanset specifiers which are represented by =%[]=.
+Inside scanset, we can specify single character or range of characters.
+While processing scanset, =scanf will process only those characters which are part of scanset=.
+
+Below example will store only capital letters to character array ‘str’, any other character will not be stored inside character array.
+#+begin_src C :results output
+  /* A simple scanset example */
+  #include <stdio.h>
+  int main(void)
+  {
+    char str[128];
+    printf("Enter a string: ");
+    scanf("%[A-Z]s", str);
+    printf("You entered: %s\n", str);
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+Enter a string: GEEKs_for_geeks
+You entered: GEEK
+
+* ='^'= Character
+If first character of scanset is ‘^’, then the specifier will stop reading after first occurrence of that character. For example, given below scanset will read all characters but stops after first occurrence of ‘o’
+#+begin_src C
+  scanf("%[^o]s", str);
+#+end_src
+
+#+RESULTS:
+Enter a string: This happens to be a random input
+You entered: This happens t
