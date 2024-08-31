@@ -40,3 +40,35 @@ As with array names, when we use the name of a function by itself, it returns th
 
 #+RESULTS:
 : 5 squared is 25
+
+It is convenient to declare a type definition for function pointers. /Note: the Syntax of Typedef is unusual./
+#+begin_src C
+  typedef int (*funcptr)(int);
+  //...
+  funcptr fptr2;
+  fptr2 = square;
+  printf("%d squared is %d\n",n, fptr2(n));
+#+end_src
+
+* Crude Example
+#+begin_src C
+  #include <stdio.h>
+
+  typedef int (*operation_ptr) (int,int);
+
+  int add(int x,int y){return x+y;}
+  int mult(int x,int y){return x*y;}
+
+  int do_opr(operation_ptr op,int a,int b){
+    return op(a,b);
+  }
+
+  int main(){
+    printf("%d\n",do_opr(add,3,5));
+    printf("%d",do_opr(mult,3,5));
+  }
+#+end_src
+
+#+RESULTS:
+|  8 |
+| 15 |

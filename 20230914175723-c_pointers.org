@@ -5,7 +5,7 @@
 
 
 A Pointer Variable is a variable whose value is the address of some memory location.
-__ =Syntax= _
+_=Syntax=_
 #+begin_src C
   int *ptr; //or
   int*    ptr;//is valid too.
@@ -30,6 +30,7 @@ Actually Means...
 #+end_src
 ** Explaination
 lets start with an example.
+
 #+begin_src C
   int x;
   int *p_x=&x;
@@ -73,3 +74,12 @@ For example, form above =explanation 1= if we perform =p_x+1= the address will b
 If a pointer still references the original memory after it has been freed, it is called a dangling pointer.
 
 * TODO NULL POINTERS
+#+begin_src C
+  #include <stdio.h>
+  int main(){
+    printf("%p",NULL);
+  }
+#+end_src
+
+#+RESULTS:
+: (nil)
