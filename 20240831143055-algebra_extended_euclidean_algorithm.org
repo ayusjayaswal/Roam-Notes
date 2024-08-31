@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       32ef107e-dd43-4bda-a492-65f3d0a8f8d3
+:END:
+#+TITLE: Algebra: Extended Euclidean Algorithm
+
+** Bézout's Theorem
+
+Bézout's Theorem states that for any two integers \(a\) and \(b\), there exist integers \(x\) and \(y\) such that:
+
+\[
+a \cdot x + b \cdot y = \gcd(a, b)
+\]
+
+where \(\gcd(a, b)\) is the greatest common divisor of \(a\) and \(b\). This theorem provides a way to express the GCD of two integers as a linear combination of those integers.
+
+** Extended Euclidean Algorithm
+
+The Extended Euclidean Algorithm not only computes the greatest common divisor (GCD) of two integers \(a\) and \(b\) but also finds integers \(x\) and \(y\) such that:
+
+\[
+a \cdot x + b \cdot y = \gcd(a, b)
+\]
+
+It is an extension of the Euclidean Algorithm and can be used to find such coefficients \(x\) and \(y\). The algorithm proceeds as follows:
+
+1. **Compute the GCD**: Use the Euclidean algorithm to find \(\gcd(a, b)\).
+2. **Find Coefficients**: Use back-substitution to express the GCD as a linear combination of \(a\) and \(b\).

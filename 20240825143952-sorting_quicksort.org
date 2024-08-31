@@ -1,0 +1,58 @@
+:PROPERTIES:
+:ID:       1107dd7f-36a5-4970-b42a-19590b74f401
+:END:
+#+title: Sorting: Quicksort
+
+* Overview
+worst case complexity of =O($\exp{n}{2}$)=
+average of =O(nlogn)=
+
+
+#+begin_src C
+#include <stdio.h>
+
+void swap(int *a, int *b) {
+    // XOR swap algorithm
+    if (a != b) { // Prevent swapping the same elements GIVES ERROR SORTING IF AVOIDED DON'T KNOW WHY
+        *a = *a ^ *b;
+        *b = *a ^ *b;
+        *a = *a ^ *b;
+    }
+}
+
+int partition(int *arr, int p, int r) {
+    int key = arr[r]; // Pivot is the last element
+    int pee = p - 1;
+    for (int i = p; i < r; i++) {
+        if (arr[i] <= key) { // If current element is less than or equal to the pivot
+            pee++;
+            swap(&arr[pee], &arr[i]); // Move smaller element to the left
+        }
+    }
+    swap(&arr[pee + 1], &arr[r]); // Place the pivot in its correct position
+    return pee + 1; // Return the index of the pivot
+}
+
+void quicksort(int *arr, int p, int r) {
+    if (p < r) {
+        int x = partition(arr, p, r);
+        quicksort(arr, p, x - 1); // Recursively sort elements before the pivot
+        quicksort(arr, x + 1, r); // Recursively sort elements after the pivot
+    }
+}
+
+int main() {
+    int arr[] = {1, 9, 8, 3, 2, 2, 7, 6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    quicksort(arr, 0, size - 1);
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+#+end_src
+
+#+RESULTS:
+: 1 2 2 3 6 7 8 9
+
