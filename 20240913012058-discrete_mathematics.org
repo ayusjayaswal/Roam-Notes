@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       32d3b3c8-29d8-4ceb-a0f5-cfcaf73b0fe9
+:END:
+#+title: Discrete Mathematics
+* Proposition
+=A proposition is a declarative sentence (that is, a sentence that declares a fact) that is either true or false, but not both.=
+
++ A tautology is a statement that is always true.
++ A contradiction is a statement that is always false.
++ A Contigency is neither tautology nor contradiction.
+  
+** A PREDICATE Is a function or relation that takes one or more arguments and returns a truth value (True or False).
+
+** QUANTIFIERS Specify the extent to which a predicate is true over a range of elements. The two main types of quantifiers are universal and existential.
+*** Types of Quantifiers
++ Universal Quantifier ( ∀ )
++ Existential Quantifier ( ∃ )
+  
+** The area of logic that deals with propositions is called the propositional calculus or propo- sitional logic. It was first developed systematically by the Greek philosopher Aristotle more than 2300 years ago.
+
+*** Truth table of p -> q
+|---+---+------|
+| p | q | q->q |
+|---+---+------|
+| T | T | T    |
+| T | F | F    |
+| F | T | T    |
+| F | F | T    |
+|---+---+------|
+
+CONVERSE  q → p
+
+CONTRAPOSITIVE  ¬q →¬p
+
+INVERSE  ¬p →¬q
+
+** Let p and q be propositions. The biconditional statement p ↔ q is the proposition “p if and only if q.”
+The biconditional statement p ↔ q is true when p and q have the same truth values, and is false otherwise.
+Biconditional statements are also called bi-implications.
+
+*** TRUTH TABLE p ↔ q
+
+|---+---+------|
+| p | q | q->q |
+|---+---+------|
+| T | T | T    |
+| T | F | F    |
+| F | T | F    |
+| F | F | T    |
+|---+---+------|
+
+* PRECEDANCE of operators follows order: ¬, ∧, ∨,→, and ↔
+
+* ARGUMENT FORM
+An argument in propositional logic is a sequence of propositions.All but the final proposition in the argument are called premises and the final proposition is called the conclusion.
+
+An argument is valid if the truth of all its premises implies that the conclusion is true.
+
+An argument form in propositional logic is a sequence of compound propositions involv- ing propositional variables.
+
+An argument form is valid no matter which particular proposi- tions are substituted for the propositional variables in its premises, the conclusion is true if the premises are all true.
+
+[[./img/rules_of_inference.png]]
