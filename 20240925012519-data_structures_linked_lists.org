@@ -1,0 +1,105 @@
+:PROPERTIES:
+:ID:       6faf78b1-71a6-4726-aae0-90f3191c6ff2
+:END:
+#+title: Data Structures: Linked Lists
+
+A =linked list= is a dynamic data structure used in computer science to store a collection of elements, where each element (called a node) contains two parts:
+    + Data: The actual value or information stored in the node.
+    + Pointer: A reference to the next node in the sequence.
+
+*** Sample:
+#+begin_src C
+  #include <stdio.h>
+  #include <stdlib.h>
+
+  // Define a Node structure
+  typedef struct _node {
+    int data;
+    struct _node* next;
+  } node;
+
+  node* createNode(int data) {
+    node* newNode = (node*)malloc(sizeof(node));
+    newNode->data = data;
+    newNode->next = NULL;
+    return newNode;
+  }
+
+  void insertAtBeginning(node** head, int data) {
+    node* newNode = createNode(data);
+    newNode->next = *head;
+    ,*head = newNode;
+  }
+
+  void deleteAtPos(node ** head,int pos){
+    node* hand = *head;
+    if(pos == 0){
+      ,*head = hand->next;
+      free(hand);
+      return;
+    }
+    for(int i = 0;i < pos;i++){
+      hand = hand->next;
+      if(hand->next == NULL)
+        return;
+    }
+    node* next = hand->next->next;
+    free(hand->next);
+    hand->next = next;
+  }
+
+  void reverseLinkedList(node ** head){
+    node* prev = NULL;
+    node* curr = *head;
+    node* next = NULL;
+    while(curr){
+      next = curr->next;
+      curr->next = prev;
+      prev = curr;
+      curr = next;
+    }
+    ,*head = prev;
+  }
+  void printList(node* head) {
+    node* current = head;
+    while (current != NULL) {
+      printf("%d -> ", current->data);
+      current = current->next;
+    }
+    printf("NULL\n");
+  }
+
+  int main() {
+    // Create an empty linked list
+    node* ll = NULL;
+
+    insertAtBeginning(&ll, 10);
+    insertAtBeginning(&ll, 20);
+    insertAtBeginning(&ll, 30);
+
+    printf("Linked List:   ");
+    printList(ll);
+
+    printf("After_deletion at_Position_1 ");
+    deleteAtPos(&ll,1);
+    printList(ll);
+
+    insertAtBeginning(&ll, 4);
+    insertAtBeginning(&ll, 69);
+    insertAtBeginning(&ll, 69);
+    printf("\nLinked List:   ");
+    printList(ll);
+    printf("\nAfter_Reversal Linked_List:   ");
+  reverseLinkedList(&ll);
+    printList(ll);
+
+
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+| Linked         | List:         | 30 | -> | 20 | -> |   10 | -> | NULL |    |    |    |      |
+| After_deletion | at_Position_1 | 30 | -> | 20 | -> | NULL |    |      |    |    |    |      |
+|                |               |    |    |    |    |      |    |      |    |    |    |      |
+| Linked         | List:         | 69 | -> | 69 | -> |    4 | -> |   30 | -> | 20 | -> | NULL |

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       1e5cf141-404b-4b1e-bb5b-26d8582ffe01
+:END:
+#+title: Number Theory 
+
+* All PERFECT SQUARES have odd number of divisors
+divisors come in pairs (if n is divisor n/d is also). square numbers have sqrt(n) that has no pair hence All PERFERCT SQAURES Have ODD number of divisors.
+
+

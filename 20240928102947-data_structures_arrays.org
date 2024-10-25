@@ -1,0 +1,135 @@
+:PROPERTIES:
+:ID:       86265fef-b79d-4dae-9dde-508d6c4456f5
+:END:
+#+title: Data Structures: Arrays
+
+* Row-Major and Column-Major Indexing of Arrays (0-based Indexing)
+
+  Row-major and column-major indexing determine how multi-dimensional arrays are stored in memory. The difference lies in the order in which the elements of the array are stored in memory.
+
+** 2D Arrays (0-based indexing)
+
+|--------------------------------+---------------------------+-------------------------------------|
+| Indexing Type                  | Access Pattern            | Memory Layout Example (3x3)         |
+|--------------------------------+---------------------------+-------------------------------------|
+| Row-Major (Lexicgraphic)       | Traverse row by row       | a₀₀ a₀₁ a₀₂ a₁₀ a₁₁ a₁₂ a₂₀ a₂₁ a₂₂ |
+| Column-Major (Colexicographic) | Traverse column by column | a₀₀ a₁₀ a₂₀ a₀₁ a₁₁ a₂₁ a₀₂ a₁₂ a₂₂ |
+|--------------------------------+---------------------------+-------------------------------------|
+
+** General Formula for D-dimensional Arrays (0-based)
+
+   Let:
+   - The dimension of the array be D
+   - The array has sizes n₁, n₂, ..., nₙ for each dimension.
+   - The index for each dimension is i₀, i₁, ..., iₙ₋₁ (0-based).
+
+For row-major indexing:
+#+begin_src text
+Offset = i₀ * (n₁ * n₂ * ... * nₙ₋₁) + i₁ * (n₂ * ... * nₙ₋₁) + ... + iₙ₋₂ * nₙ₋₁ + iₙ₋₁
+#+end_src
+
+For column-major indexing:
+#+begin_src text
+Offset = iₙ₋₁ * (n₀ * n₁ * ... * nₙ₋₂) + iₙ₋₂ * (n₀ * n₁ * ... * nₙ₋₃) + ... + i₁ * n₀ + i₀
+#+end_src
+
+* Sparse Matrices and Their Representations
+
+Sparse matrices contain mostly zero elements. Efficient storage and computation for sparse matrices are achieved using specialized formats.
+
+** Key Characteristics:
+- High proportion of zero elements.
+- Efficient storage using formats that store only non-zero elements.
+- Optimized for operations on non-zero elements.
+
+** Common Representations with Examples:
+
+| Format | Structure                                     | Example (3x3 Matrix)                                       |
+|--------+-----------------------------------------------+------------------------------------------------------------|
+| COO    | Row indices, column indices, values           | Rows: [0, 1, 2]  Cols: [2, 1, 0]  Values: [3, 5, 4]        |
+| CSR    | Non-zero values, column indices, row pointers | Values: [3, 5, 4]  Cols: [2, 1, 0]  Row Ptrs: [0, 1, 2, 3] |
+| CSC    | Non-zero values, row indices, col pointers    | Values: [4, 5, 3]  Rows: [2, 1, 0]  Col Ptrs: [0, 1, 2, 3] |
+| DIA    | Diagonals, diagonal offsets                   | Diagonals: [[1, 4, 7], [2, 5]]  Offsets: [0, 1]            |
+
+** 1. Coordinate List (COO) Format:
+
+- **Concept**: Stores non-zero elements with their row and column indices.
+- **Array Structure**:
+  - Row Indices
+  - Column Indices
+  - Non-zero Values
+
+**Example** (3x3 Matrix):
+#+begin_example
+Matrix:
+0  0  3
+0  5  0
+4  0  0
+
+COO Representation:
+Rows:    [0, 1, 2]
+Columns: [2, 1, 0]
+Values:  [3, 5, 4]
+#+end_example
+
+** 2. Compressed Sparse Row (CSR) Format:
+
+- **Concept**: Stores non-zero elements row-wise, using pointers to indicate where each row starts.
+- **Array Structure**:
+  - Non-zero Values
+  - Column Indices
+  - Row Pointer (starting index of each row in the values array)
+
+**Example** (3x3 Matrix):
+#+begin_example
+Matrix:
+0  0  3
+0  5  0
+4  0  0
+
+CSR Representation:
+Values:        [3, 5, 4]
+Column Indices: [2, 1, 0]
+Row Pointers:   [0, 1, 2, 3]
+#+end_example
+
+** 3. Compressed Sparse Column (CSC) Format:
+
+- **Concept**: Similar to CSR but stores data column by column.
+- **Array Structure**:
+  - Non-zero Values
+  - Row Indices
+  - Column Pointer (starting index of each column in the values array)
+
+**Example** (3x3 Matrix):
+#+begin_example
+Matrix:
+0  0  3
+0  5  0
+4  0  0
+
+CSC Representation:
+Values:        [4, 5, 3]
+Row Indices:   [2, 1, 0]
+Column Pointers: [0, 1, 2, 3]
+#+end_example
+
+** 4. Diagonal Storage (DIA) Format:
+
+- **Concept**: Stores non-zero elements confined to a few diagonals.
+- **Array Structure**:
+  - Diagonals
+  - Diagonal Offsets
+
+**Example** (4x4 Matrix):
+#+begin_example
+Matrix:
+1  2  0  0
+3  4  5  0
+0  6  7  8
+0  0  9 10
+
+DIA Representation:
+Diagonals:    [[1, 4, 7, 10], [2, 5, 8], [3, 6, 9]]
+Offsets: [0, 1, -1]
+#+end_example

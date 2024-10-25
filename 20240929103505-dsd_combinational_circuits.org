@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       41f446ed-746c-47ec-bf13-f8d60c34e25d
+:END:
+#+title: DSD: Combinational circuits
+
+A combinational circuit consists of logic gates whose outputs at any time are determined from only the present combination of inputs.
+
+A combinational circuit that performs the addition of two bits is called a  HALF ADDER .
+* Full Adder
+One that performs the addition of three bits (two significant bits and a previous carry) is a  FULL ADDER .
+Addition of n-bit numbers requires a chain of n full adders or a chain of one-half adder and n 9 1 full adders.
+ Pi = Ai { Bi
+Gi = AiBi 
+ the output sum and carry can respectively be expressed as 
+ Si = Pi { Ci
+ 
+Ci+1 = Gi + PiCi 
+ Gi is called a  carry generate , and it produces a carry of 1 when both  Ai and  Bi are 1, 
+regardless of the input carry  Ci. Pi is called a  carry propagate
+* Comparator
+A  magnitude comparator is a combinational circuit that compares two numbers  A and  B  and determines their relative magnitudes.
+The outcome of the comparison is specified by three binary variables that indicate whether   A > B, A = B, or  A < B. 
+* DECODER
+A  decoder is a combinational circuit that converts binary information from
+* Priority Encoder
+ The operation of the priority encoder is such that if two or more inputs are equal to 1 at the same time, the input having the highest priority will take precedence.

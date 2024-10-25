@@ -4,9 +4,16 @@
 #+title: C: Dynamic Allocation
 C Dynamic Memory Allocation can be defined as a procedure in which the size of a data structure (like Array) is changed during the runtime.
 
+[[id:c95c860c-3742-4a59-a22e-13530e9e6f2d][C malloc()]]
+
 The /malloc function/ single argument specifies the number of bytes to allocate. If suc‐
 cessful, it returns a pointer to memory allocated from the heap. If it fails, it returns a
 null pointer.
+
+* Memory Accessibility Outside the Function
+It is important to note that memory allocated using malloc is accessible outside the function in which it was allocated.
+This is because malloc allocates memory from the heap, a region of memory that is available to the entire program. When you call malloc inside a function, you are essentially requesting a block of memory from the heap.
+However, while the allocated memory is accessible, the pointer itself is not accessible outside the function unless it is explicitly passed back to the caller, either as a return value or through a pointer parameter.
 
 * Memory Leaks
 A memory leak occurs when allocated memory is never used again but is not freed. This can happen when:

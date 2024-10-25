@@ -2,6 +2,59 @@
 :ID:       32d3b3c8-29d8-4ceb-a0f5-cfcaf73b0fe9
 :END:
 #+title: Discrete Mathematics
+* Definitions
+Set
+A collection of distinct objects, considered as an object in its own right.
+
+Indexed Set
+A set that is indexed by another set, usually for organizing elements. For example, 
+{𝑎𝑖 ∣ 𝑖∈𝐼} denotes a set of elements indexed by 𝐼.
+
+Countable Set
+A set that can be put into a one-to-one correspondence with the natural numbers. Countable sets can be either finite or countably infinite.
+
+Uncountable Set
+A set that cannot be put into a one-to-one correspondence with the natural numbers. An example is the set of real numbers.
+
+Relation
+A relation 𝑅 from a set 𝐴 to a set 𝐵 is a subset of the Cartesian product 𝐴×𝐵.
+
+Function (Mapping)
+A relation 𝑓 from set 𝐴 to set 𝐵 is called a function if every element of 𝐴 is related to exactly one element of 𝐵. It is often denoted as 𝑓:𝐴→𝐵.
+
+Injective Function (One-to-One)
+A function 𝑓: 𝐴→𝐵 is injective if different elements in 𝐴 map to different elements in 𝐵. In other words, if 𝑓(𝑎1)=𝑓(𝑎2) then 𝑎1=𝑎2.
+
+Surjective Function (Onto)
+A function 𝑓: 𝐴→𝐵 is surjective if for every element 𝑏∈𝐵, there is at least one element 𝑎∈𝐴 such that 𝑓(𝑎) = 𝑏. This means the range of 𝑓 is equal to 𝐵.
+
+Bijective Function (One-to-One Correspondence)
+A function 𝑓: 𝐴→𝐵 is bijective if it is both injective and surjective. This means every element of 𝐴 is paired with a unique element of 𝐵, and vice versa.
+
+Reflexive Relation
+A relation 𝑅 on a set 𝐴 is reflexive if every element is related to itself. In other words, (𝑎,𝑎)∈𝑅 for all 𝑎∈𝐴.
+
+Irreflexive Relation
+A relation 𝑅 on a set 𝐴 is irreflexive if no element is related to itself. That is, (𝑎 , 𝑎)∉𝑅 for all 𝑎∈𝐴.
+
+Symmetric Relation
+A relation 𝑅 on a set 𝐴 is symmetric if, whenever (𝑎 , 𝑏)∈𝑅, then (𝑏 , 𝑎) ∈ 𝑅 for all 𝑎,𝑏 ∈𝐴 .
+
+Antisymmetric Relation
+A relation 𝑅 on a set 𝐴 is antisymmetric if, whenever (𝑎 , 𝑏) ∈ 𝑅 and (𝑏 , 𝑎) ∈ 𝑅, then 𝑎 = 𝑏 for all 𝑎 , 𝑏 ∈ 𝐴.
+
+Transitive Relation
+A relation 𝑅 on a set 𝐴 is transitive if, whenever (𝑎 , 𝑏) ∈ 𝑅 and (𝑏 , 𝑐) ∈ 𝑅, then (𝑎 , 𝑐) ∈ 𝑅 for all 𝑎 , 𝑏 , 𝑐 ∈ 𝐴.
+
+Total Relation
+A relation 𝑅 on a set 𝐴 is total if for every pair of distinct elements 𝑎 , 𝑏 ∈ 𝐴, at least one of (𝑎 , 𝑏) or (𝑏 , 𝑎) is in 𝑅.
+
+** Important
+Partial Order
+A relation 𝑅 on a set 𝐴 is a partial order if it is _reflexive, antisymmetric, and transitive_. This means not all elements need to be comparable.
+
+Total Order (Linear Order)
+A relation 𝑅 on a set 𝐴 is a total order if it is a partial order and also total. This means every pair of distinct elements is comparable.
 * Proposition
 =A proposition is a declarative sentence (that is, a sentence that declares a fact) that is either true or false, but not both.=
 
@@ -9,7 +62,8 @@
 + A contradiction is a statement that is always false.
 + A Contigency is neither tautology nor contradiction.
   
-** A PREDICATE Is a function or relation that takes one or more arguments and returns a truth value (True or False).
+** A PREDICATE Is a function or relation that takes one or more arguments and returns a truth value (True or False). SUBJECT is the variable that can be true or false
+PREDICATE(SUBJECT)
 
 ** QUANTIFIERS Specify the extent to which a predicate is true over a range of elements. The two main types of quantifiers are universal and existential.
 *** Types of Quantifiers
@@ -56,8 +110,84 @@ An argument in propositional logic is a sequence of propositions.All but the fin
 
 An argument is valid if the truth of all its premises implies that the conclusion is true.
 
-An argument form in propositional logic is a sequence of compound propositions involv- ing propositional variables.
+An argument form in propositional logic is a sequence of compound propositions involving propositional variables.
 
-An argument form is valid no matter which particular proposi- tions are substituted for the propositional variables in its premises, the conclusion is true if the premises are all true.
+An argument form is valid no matter which particular propositions are substituted for the propositional variables in its premises, the conclusion is true if the premises are all true.
+
+** Argument
+An **argument** is a collection of statements where some statements (called premises) are presented to support or provide reasons for believing another statement (called the conclusion). It typically involves reasoning from the premises to the conclusion.
+
+** Premise
+A **premise** is a statement or proposition that provides support or evidence for the conclusion in an argument. Premises are the foundation on which the argument is built.
+
+** Conclusion
+A **conclusion** is the statement that an argument is trying to establish or prove based on the premises. It is the main point or outcome that follows logically from the premises.
+
+** Valid Argument
+A **valid argument** is one in which, if the premises are true, the conclusion must also be true.
 
 [[./img/rules_of_inference.png]]
+* Definitions Related to Lattices and Hasse Diagrams
+
+** Hasse Diagram
+A **Hasse diagram** is a graphical representation of a finite partially ordered set (poset). It depicts the ordering of elements where each element is represented by a node, and an upward edge indicates that one element covers another in the order. The diagram omits redundant edges, making it a minimal representation of the order.
+
+** Minimal Element
+An element \( m \) in a poset is **minimal** if there is no element smaller than \( m \). That is, there is no element \( a \) such that \( a < m \).
+
+** Maximal Element
+An element \( M \) in a poset is **maximal** if there is no element larger than \( M \). That is, there is no element \( a \) such that \( M < a \).
+
+** Maximum Element
+An element \( M \) is a **maximum** if it is greater than or equal to every other element in the set. There can be at most one maximum element.
+
+** Minimum Element
+An element \( m \) is a **minimum** if it is less than or equal to every other element in the set. There can be at most one minimum element.
+
+** Upper Bound
+An element \( u \) is an **upper bound** of a subset \( S \) in a poset if for every element \( s \in S \), \( s \leq u \).
+
+** Lower Bound
+An element \( l \) is a **lower bound** of a subset \( S \) in a poset if for every element \( s \in S \), \( l \leq s \).
+
+** Greatest Lower Bound (GLB)
+The **greatest lower bound** (GLB) or **infimum** of a subset \( S \) in a poset is the largest element that is a lower bound of \( S \).
+
+** Least Upper Bound (LUB)
+The **least upper bound** (LUB) or **supremum** of a subset \( S \) in a poset is the smallest element that is an upper bound of \( S \).
+
+** Lattice
+A **lattice** is a poset in which every pair of elements has both a **least upper bound** (join) and a **greatest lower bound** (meet). It provides a structured way of comparing and combining elements.
+
+** Join
+The **join** of two elements \( a \) and \( b \) in a lattice, denoted \( a \vee b \), is their least upper bound (LUB). It represents a combination or union of the two elements.
+
+** Meet
+The **meet** of two elements \( a \) and \( b \) in a lattice, denoted \( a \wedge b \), is their greatest lower bound (GLB). It represents the commonality or intersection of the two elements.
+
+** Semilattice
+A **semilattice** is a poset in which either the join or meet operation exists for every pair of elements, but not necessarily both. A **join-semilattice** has joins, and a **meet-semilattice** has meets.
+
+** Supremum
+The **supremum** is the least upper bound (LUB) of a set. It represents the smallest element that is greater than or equal to all elements in the set.
+
+** Complete Lattice
+A **complete lattice** is a lattice in which every subset has both a join (LUB) and a meet (GLB). This means that not only pairs of elements, but any subset, has a well-defined supremum and infimum.
+
+** Bounded Lattice
+A **bounded lattice** is a lattice that has both a greatest element (denoted as \( 1 \) or \( \top \)) and a least element (denoted as \( 0 \) or \( \bot \)). These act as identity elements for the join and meet operations.
+
+** Distributive Lattice
+A **distributive lattice** is a lattice where the operations of join and meet distribute over each other. Specifically, for all elements \( a, b, c \):
+   \[
+   a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)
+   \quad \text{and} \quad
+   a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)
+   \]
+
+** Complemented Lattice
+A **complemented lattice** is a bounded lattice in which every element \( a \) has a **complement** \( a' \) such that:
+   \[
+   a \wedge a' = 0 \quad \text{and} \quad a \vee a' = 1
+   \]
+The complement represents an element that "opposes" the original element in terms of the join and meet operations.

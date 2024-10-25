@@ -9,6 +9,10 @@ It returns a pointer of type void which can be cast into a pointer of any form.
 
 It doesn’t Initialize memory at execution time so that it has initialized each block with the default garbage value initially.
 
+The malloc function is not guaranteed to successfully allocate memory. If it fails, it returns a /null pointer/.
+
+It is important to note that memory allocated using malloc is =accessible outside the function in which it was allocated=.
+
 * Syntax
 #+begin_src C
   ptr = (cast-type *) malloc(byte-size)

@@ -1,0 +1,202 @@
+:PROPERTIES:
+:ID:       1b1896b5-bfa0-4a25-947d-07f3477a4bd7
+:END:
+#+title: Infix, Postfix, Prefix
+
+* Infix to Postfix Conversion and Postfix Evaluation
+
+This note explains how to convert an infix expression to postfix, provides an example, and implements the corresponding C code for both the conversion and the evaluation of a postfix expression.
+
+** Infix vs Postfix
+An *infix expression* is the common mathematical notation where operators are placed between operands, like:
+= a + b =
+
+A *postfix expression* (also known as Reverse Polish Notation or RPN) places operators after their operands:
+= a b + =
+
+*Why convert infix to postfix?*
+- Infix expressions require knowledge of operator precedence and parentheses for correct evaluation.
+- Postfix expressions remove this complexity by ensuring that operands and operators are in an unambiguous order, allowing for simpler and more efficient evaluation, particularly when using stacks.
+
+** Example of Infix to Postfix Conversion
+
+Let’s convert the following infix expression to postfix:
+= a + b * (c / d + e) - f =
+
+Step-by-step process:
+1. Operands (a, b, c, d, e, f) are added directly to the output.
+2. Operators are pushed onto a stack based on their precedence.
+3. Parentheses group operations that need to be evaluated first.
+
+** Conversion Example
+
+Input: = a + b * (c / d + e) - f =
+
+| Step | Symbol | Stack         | Output        |
+|------|--------|---------------|---------------|
+| 1    | a      |               | a             |
+| 2    | +      | +             | a             |
+| 3    | b      | +             | a b           |
+| 4    | *      | + *           | a b           |
+| 5    | (      | + * (         | a b           |
+| 6    | c      | + * (         | a b c         |
+| 7    | /      | + * (/        | a b c         |
+| 8    | d      | + * (/        | a b c d       |
+| 9    | +      | + * (+        | a b c d /     |
+| 10   | e      | + * (+        | a b c d / e   |
+| 11   | )      | + *           | a b c d / e + |
+| 12   | -      | -             | a b c d / e + * |
+| 13   | f      | -             | a b c d / e + * f |
+| 14   | End    |               | a b c d / e + * f - |
+
+Final Postfix: = a b c d / e + * f - =
+
+** C Code for Infix to Postfix Conversion
+
+Below is the C code that implements the conversion of an infix expression to a postfix expression using a stack.
+
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+#define MAX 100
+
+char stack[MAX];
+int top = -1;
+
+// Function to push operators to the stack
+void push(char x) {
+    if (top < MAX - 1) {
+        stack[++top] = x;
+    }
+}
+
+// Function to pop operators from the stack
+char pop() {
+    if (top >= 0) {
+        return stack[top--];
+    }
+    return -1;
+}
+
+// Function to return precedence of operators
+int precedence(char x) {
+    if (x == '+' || x == '-') return 1;
+    if (x == '*' || x == '/') return 2;
+    return 0;
+}
+
+// Function to convert infix to postfix
+void infixToPostfix(char* exp) {
+    char output[MAX] = "";
+    int k = 0;
+    
+    for (int i = 0; exp[i] != '\0'; i++) {
+        // If operand, add to output
+        if (isalnum(exp[i])) {
+            output[k++] = exp[i];
+        }
+        // If opening parenthesis, push to stack
+        else if (exp[i] == '(') {
+            push(exp[i]);
+        }
+        // If closing parenthesis, pop until '('
+        else if (exp[i] == ')') {
+            while (top != -1 && stack[top] != '(') {
+                output[k++] = pop();
+            }
+            pop(); // Remove '('
+        }
+        // If operator, pop according to precedence
+        else {
+            while (top != -1 && precedence(stack[top]) >= precedence(exp[i])) {
+                output[k++] = pop();
+            }
+            push(exp[i]);
+        }
+    }
+
+    // Pop remaining operators
+    while (top != -1) {
+        output[k++] = pop();
+    }
+    
+    output[k] = '\0'; // Null-terminate the string
+    printf("Postfix Expression: %s\n", output);
+}
+
+int main() {
+    char exp[MAX];
+    printf("Enter infix expression: ");
+    scanf("%s", exp);
+    infixToPostfix(exp);
+    return 0;
+}
+#+END_SRC
+
+** C Code for Postfix Expression Evaluation
+
+Once the postfix expression is generated, it can be evaluated using a stack. The C code below evaluates a postfix expression.
+
+#+BEGIN_SRC c
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+
+#define MAX 100
+
+int stack[MAX];
+int top = -1;
+
+// Function to push operands to the stack
+void push(int x) {
+    if (top < MAX - 1) {
+        stack[++top] = x;
+    }
+}
+
+// Function to pop operands from the stack
+int pop() {
+    if (top >= 0) {
+        return stack[top--];
+    }
+    return -1;
+}
+
+// Function to evaluate postfix expression
+int evaluatePostfix(char* exp) {
+    for (int i = 0; exp[i] != '\0'; i++) {
+        // If operand, push to stack
+        if (isdigit(exp[i])) {
+            push(exp[i] - '0');
+        }
+        // If operator, pop two operands and apply operator
+        else {
+            int val1 = pop();
+            int val2 = pop();
+            switch (exp[i]) {
+                case '+': push(val2 + val1); break;
+                case '-': push(val2 - val1); break;
+                case '*': push(val2 * val1); break;
+                case '/': push(val2 / val1); break;
+            }
+        }
+    }
+    return pop();
+}
+
+int main() {
+    char exp[MAX];
+    printf("Enter postfix expression: ");
+    scanf("%s", exp);
+    printf("Postfix evaluation result: %d\n", evaluatePostfix(exp));
+    return 0;
+}
+#+END_SRC
+
+** Summary
+- Infix expressions are easy for humans to read but require converting to postfix for simpler evaluation by computers.
+- The stack is used both to convert an infix expression to postfix and to evaluate a postfix expression.
+- The C code provided performs these conversions and evaluations step by step.
+

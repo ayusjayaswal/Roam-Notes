@@ -5,17 +5,20 @@
 
 The "STL" was written by Alexander Stepanov in the days long before C++ was standardised
 
-** Pair
-/std::pair/ is a class template that provides a way to store two heterogeneous objects as a single unit.
-
 * Classifications
 STL has four major components:
 
 + Containers
-+ Iterators
++ Iterators [[id:de835806-bde2-4226-9931-b919e17bd2a6][STL: Iterators]]
 + Algorithms
 + Function objects
   
 ** Containers
 Now, containers are further classified into three categories:
 [[./img/containers.png]]
+
+* Elements...
+[[id:f941d826-f26e-438b-9054-f601bbb5f0a6][STL: Pair]]
+[[id:9a8e8cc4-adb6-4a92-a319-a8faf679b588][STL: Sequance Container: Vectors]]
+[[id:b5ae8ba1-9767-4cfe-9b50-af29b3c7ccea][STL: Sequance Container: Deque]]
+[[id:de835806-bde2-4226-9931-b919e17bd2a6][STL: Iterators]]

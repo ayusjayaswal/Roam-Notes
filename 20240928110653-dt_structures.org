@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       785d69bb-0a81-468c-a2b4-4337a796c6ac
+:END:
+#+title: Data Structures
+
+A data structure is a specialized format for organizing, processing, retrieving and storing data.
+
+following are some data strucutures:
+[[id:86265fef-b79d-4dae-9dde-508d6c4456f5][Data Structures: Arrays]]
+[[id:6faf78b1-71a6-4726-aae0-90f3191c6ff2][Data Structures: Linked Lists]]

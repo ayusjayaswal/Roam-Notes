@@ -1,0 +1,56 @@
+:PROPERTIES:
+:ID:       d6ec733b-016e-471c-bcbd-675346b14b8e
+:END:
+#+title: DSD: SOP(DNF),POS(CNF),Minterm,Maxterm
+
+* SOP (Sum of Products) or DNF (Disjunctive Normal Form):
+/Definition: A Boolean expression in which ANDed terms (products) are ORed together./
+Form: 
+𝐹 = (𝐴∧𝐵)∨(¬𝐴∧𝐶)
+
+Derived From: Rows in the truth table where the output is 1 (True).
+
+Example: 
+𝐹 = 𝐴′𝐵′𝐶 + 𝐴𝐵′𝐶′ + 𝐴𝐵𝐶
+
+Representation: Sum of MINTERMS.
+** Minterms:
+Definition: A product term where each variable appears exactly once, either in true or complemented form.
+Represents: Each row where the function outputs 1 (True).
+Ex: SOP is a sum of MINTERMS.
+
+** Maxterms:
+Definition: A sum term where each variable appears exactly once, either in true or complemented form.
+Represents: Each row where the function outputs 0 (False).
+Ex: POS is a product of MAXTERMS.
+
+* **Minterms are complements of maxterms for the same input combination.**
+
+* Relationship Between SOP & POS:
+SOP (DNF): Uses minterms, true for when the output is 1.
+POS (CNF): Uses maxterms, true for when the output is 0.
+
+* Canonical Form:
+
+Definition: A Boolean expression where each term includes every variable in the system either in true or complemented form.
+
+* Non-Canonical Form:
+
+Definition: A Boolean expression where not all terms include all variables.
+
+The expression is simplified, typically through Boolean algebra, without explicitly listing every variable in each term.
+
+* Conversion Between Canonical and Non-Canonical Forms:
+
+Non-Canonical to Canonical (SOP):
+Step 1: Identify the missing variables in each term.
+Step 2: Expand each term by applying the distributive property.
+Step 3: Add terms where the missing variables are in both true and complemented form.
+
+Example:
+Non-Canonical: 𝐴 + 𝐵𝐶
+Expand to include all variables:
+1. 𝐴 = 𝐴(𝐵+𝐵′)(𝐶+𝐶′)
+2. 𝐵𝐶 = 𝐵𝐶(𝐴+𝐴′)
+Canonical SOP: 
+𝐴𝐵𝐶+𝐴𝐵'𝐶'+𝐴'𝐵𝐶
