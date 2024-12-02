@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       4a44248a-2f74-499e-a55e-6a9225354d18
+:END:
+#+title: NP Completeness Theory
+
+=Deterministic Algorithm:= An algorithm that, given a particular input, always produces the same output and follows the same sequence of steps.
+
+=Non-deterministic Algorithm:= An algorithm that may exhibit different behaviours on different runs, even with the same input, due to non-deterministic choices made during execution.
+
+=P (Polynomial Time):= The class of decision problems that can be solved by a deterministic algorithm in polynomial time.
+
+=NP (Non-deterministic Polynomial Time):= The class of decision problems that can be solved by a non-deterministic algorithm in polynomial time.
+
+=NP-hard:= The class of problems that are at least as hard as the hardest problems in NP. Every problem in NP can be reduced to an NP-hard problem.
+
+NP-complete: The class of problems that are both in NP and NP-hard. They are the hardest problems in NP.

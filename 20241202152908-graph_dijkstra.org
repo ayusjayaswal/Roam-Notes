@@ -1,0 +1,66 @@
+:PROPERTIES:
+:ID:       65f89d77-2f69-47f9-aa73-86239e3cc407
+:END:
+#+title: Graph: Dijkstra
+* Dijkstra's Algorithm
+** Overview
+- Purpose: Find the shortest path from a single source node to all other nodes in a graph.
+- Graph Type: Weighted and non-negative edges.
+- Key Idea: Greedily selects the closest unvisited node.
+
+** Steps
+1. Initialize distances to all nodes as infinity; set source distance to 0.
+2. Mark all nodes as unvisited.
+3. Repeat until all nodes are visited:
+   - Select the unvisited node with the smallest distance (min heap helps here).
+   - Update distances of its neighbors if a shorter path is found.
+   - Mark the node as visited.
+
+** Pseudocode
+#+begin_src text
+  function Dijkstra(Graph, Start, N):
+
+  // Initialize distances and visited status
+  for i = 0 to N-1: dist[i] = INF vis[i] = false
+  dist[Start] = 0
+
+  // Main loop to find shortest paths
+  for count = 0 to N-1:
+
+     // Find the unvisited vertex with the smallest distance
+     min_dist = INF, u = -1
+     for i = 0 to N-1: if not vis[i] and dist[i] < min_dist: min_dist = dist[i]
+     u = i
+
+     if u == -1: break // No more reachable vertices
+
+     // Mark the vertex as visited
+     vis[u] = true
+
+     // Update distances for neighbors of u
+     for v = 0 to N-1: if not vis[v] and Graph[u][v] != 0:
+     dist[v] = min(dist[v], dist[u] + graph[u][v])
+#+end_src
+
+** Complexity Analysis
+- **Initialization:** =(O(N))=
+  - Setting up distance and visited arrays.
+- **Main Loop:** =(O(N^2))=
+  - **Find Minimum Vertex:** O(N) for each of N iterations.
+  - **Update Distances:** O(N) for each of N  iterations.
+
+- **Overall Time Complexity:** =O(N^2)=
+  - Works efficiently for dense graphs represented by adjacency matrices.
+- Space Complexity: =(O(N^2))= for adjacency matrix.
+  
+** Example
+Graph:
+- Nodes: A, B, C, D
+- Edges: A->B (1), A->C (4), B->C (2), B->D (6), C->D (3)
+
+Source: A
+- Shortest Path Tree:
+  - A to B: 1
+  - A to C: 3 (via B)
+  - A to D: 6 (via C)
+
