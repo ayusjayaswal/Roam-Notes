@@ -4,16 +4,27 @@
 #+title: Graph: Dijkstra
 * Dijkstra's Algorithm
 ** Overview
+- Style: =GREEDY=
+- =O(V^2)=
+- =O(E.logV)= // with Binary Heap Priority Queue
+
 - Purpose: Find the shortest path from a single source node to all other nodes in a graph.
 - Graph Type: Weighted and non-negative edges.
-- Key Idea: Greedily selects the closest unvisited node.
+  
+- /Step 1 : VISIT THE CLOSEST UNVISITED NODE/
+- /Step 2 : RELAX EVERY UNVISITED NAIGHBOUR/
+  
+* What is =Relaxation=?
+for Graph G(u,v)
+ relaxation(u,v) is :
+   _dist(v) = min(dist(v), dist(u)+graph(u,v))_
 
 ** Steps
 1. Initialize distances to all nodes as infinity; set source distance to 0.
 2. Mark all nodes as unvisited.
 3. Repeat until all nodes are visited:
    - Select the unvisited node with the smallest distance (min heap helps here).
-   - Update distances of its neighbors if a shorter path is found.
+   - Relax all unvisited neighbours
    - Mark the node as visited.
 
 ** Pseudocode
